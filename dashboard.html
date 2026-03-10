@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | SmartX Buy & Sell</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .dashboard-container {
+            padding-top: 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-inline: 1.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card .amount {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .stat-card.balance .amount {
+            color: var(--primary);
+        }
+
+        .stat-card.income .amount {
+            color: var(--success);
+        }
+
+        .stat-card.expense .amount {
+            color: var(--accent);
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 992px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-section,
+        .list-section {
+            padding: 2rem;
+        }
+
+        .transaction-form .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .transaction-list {
+            margin-top: 1.5rem;
+        }
+
+        .transaction-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: 0.3s;
+        }
+
+        .transaction-item:hover {
+            transform: translateX(10px);
+            border-color: var(--primary);
+        }
+
+        .transaction-info h4 {
+            margin-bottom: 0.25rem;
+        }
+
+        .transaction-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .transaction-amount {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .amount-buy {
+            color: var(--accent);
+        }
+
+        .amount-sell {
+            color: var(--success);
+        }
+
+        .action-btns {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .action-btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: 0.3s;
+            padding: 5px;
+        }
+
+        .action-btn:hover {
+            color: var(--primary);
+        }
+
+        .action-btn.delete:hover {
+            color: var(--accent);
+        }
+
+        /* Select styling */
+        select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--bg-alt);
+            color: var(--text);
+            font-family: inherit;
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+    <!-- Navbar -->
+    <nav id="navbar" class="scrolled">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i data-lucide="zap"></i>
+                SmartX
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+            </ul>
+            <div class="nav-btns">
+                <div class="theme-toggle" id="theme-toggle">
+                    <i data-lucide="moon"></i>
+                </div>
+                <a href="index.html" class="btn btn-outline">Back to Site</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="section-header">
+            <h2>Financial Overview</h2>
+            <p>Track your product buy and sell history with ease.</p>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="stats-grid">
+            <div class="stat-card glass balance">
+                <h3>Total Balance</h3>
+                <div class="amount" id="total-balance">$0.00</div>
+            </div>
+            <div class="stat-card glass income">
+                <h3>Total Sales (Income)</h3>
+                <div class="amount" id="total-income">$0.00</div>
+            </div>
+            <div class="stat-card glass expense">
+                <h3>Total Purchases (Expense)</h3>
+                <div class="amount" id="total-expense">$0.00</div>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Add Transaction Form -->
+            <div class="form-section glass">
+                <h3 style="margin-bottom: 1.5rem;">Add New Transaction</h3>
+                <form id="transaction-form" class="transaction-form">
+                    <div class="form-group">
+                        <label for="item-name">Product Name</label>
+                        <input type="text" id="item-name" placeholder="e.g. Smart Hub v2" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="transaction-type">Transaction Type</label>
+                        <select id="transaction-type" required>
+                            <option value="buy">Purchase (Buy/Expense)</option>
+                            <option value="sell">Sale (Sell/Income)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount ($)</label>
+                        <input type="number" id="amount" placeholder="0.00" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" id="submit-btn">Record Transaction</button>
+                </form>
+            </div>
+
+            <!-- Transaction List -->
+            <div class="list-section glass">
+                <h3 style="margin-bottom: 1.5rem;">Recent Transactions</h3>
+                <div id="transaction-list" class="transaction-list">
+                    <!-- Items injected here -->
+                    <p style="text-align: center; color: var(--text-muted); margin-top: 2rem;">No transactions recorded
+                        yet.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal (Simplified) -->
+    <div id="edit-modal" class="modal-overlay">
+        <div class="modal-content glass">
+            <button class="close-modal" id="close-edit">&times;</button>
+            <div class="modal-header">
+                <h3>Edit Transaction</h3>
+            </div>
+            <form id="edit-form">
+                <input type="hidden" id="edit-id">
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input type="text" id="edit-name" required>
+                </div>
+                <div class="form-group">
+                    <label>Amount ($)</label>
+                    <input type="number" id="edit-amount" step="0.01" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Update Entry</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+    <script>
+        lucide.createIcons();
+
+        // Theme Toggle for Dashboard
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        body.setAttribute('data-theme', savedTheme);
+        themeToggle.innerHTML = savedTheme === 'dark' ? '<i data-lucide="sun"></i>' : '<i data-lucide="moon"></i>';
+        lucide.createIcons();
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeToggle.innerHTML = newTheme === 'dark' ? '<i data-lucide="sun"></i>' : '<i data-lucide="moon"></i>';
+            lucide.createIcons();
+        });
+    </script>
+</body>
+
+</html>

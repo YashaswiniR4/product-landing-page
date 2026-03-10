@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartX | Future of Smart Living</title>
+    <meta name="description"
+        content="Experience the next generation of smart home technology with SmartX. Intuitive design, powerful features, and seamless integration.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body data-theme="light">
+    <!-- Loader -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Background Shapes -->
+    <div class="animated-bg">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <nav id="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <i data-lucide="zap"></i>
+                SmartX
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#demo">Demo</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li class="mobile-only"><a href="#" id="mobile-login-btn">Login</a></li>
+                <li class="mobile-only"><a href="#" id="mobile-register-btn">Register</a></li>
+            </ul>
+            <div class="nav-btns">
+                <div class="theme-toggle" id="theme-toggle">
+                    <i data-lucide="moon"></i>
+                </div>
+                <a href="#" class="btn btn-outline nav-login-btn desktop-only" id="nav-login-btn">Login</a>
+                <a href="#" class="btn btn-primary nav-register-btn desktop-only" id="nav-register-btn">Register</a>
+                <div class="menu-btn" id="menu-btn">
+                    <i data-lucide="menu"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay (Inside nav-links for consistency) -->
+    <!-- Note: nav-links is already in the HTML, updating it to include login/register for mobile -->
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1 class="reveal">Smart Living, <br>Evolved with AI.</h1>
+                <p class="reveal">Master your home environment with the most advanced AI hub ever built. SmartX learns
+                    your routines and optimizes energy, security, and comfort automatically.</p>
+                <div class="hero-btns reveal">
+                    <a href="#" class="btn btn-primary btn-glow">Buy Now</a>
+                    <a href="#" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-img-container reveal">
+                <img src="assets/images/hero.png" alt="SmartX Device">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Next-Gen Features</h2>
+                <p>Discover how SmartX redefines convenience with cutting-edge technology and human-centric design.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card glass reveal">
+                    <div class="feature-icon"><i data-lucide="cpu"></i></div>
+                    <h3>AI Learning</h3>
+                    <p>Adapts to your lifestyle patterns to automate tasks before you even think of them.</p>
+                </div>
+                <div class="feature-card glass reveal">
+                    <div class="feature-icon"><i data-lucide="shield-check"></i></div>
+                    <h3>Ironclad Security</h3>
+                    <p>Military-grade encryption for all your data and real-time threat detection.</p>
+                </div>
+                <div class="feature-card glass reveal">
+                    <div class="feature-icon"><i data-lucide="battery"></i></div>
+                    <h3>Energy Saving</h3>
+                    <p>Reduces utility bills by up to 30% with intelligent appliance management.</p>
+                </div>
+                <div class="feature-card glass reveal">
+                    <div class="feature-icon"><i data-lucide="smartphone"></i></div>
+                    <h3>App Control</h3>
+                    <p>Full control from anywhere in the world with our sleek mobile application.</p>
+                </div>
+                <div class="feature-card glass reveal">
+                    <div class="feature-icon"><i data-lucide="mic"></i></div>
+                    <h3>Voice Ready</h3>
+                    <p>Seamlessly integrates with all major voice assistants for hands-free control.</p>
+                </div>
+                <div class="feature-card glass reveal">
+                    <div class="feature-icon"><i data-lucide="refresh-ccw"></i></div>
+                    <h3>OTA Updates</h3>
+                    <p>Your device gets better over time with regular over-the-air software updates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section benefits" id="benefits">
+        <div class="container benefits-grid">
+            <div class="hero-img-container reveal">
+                <img src="assets/images/app-preview.png" alt="SmartX Benefits">
+            </div>
+            <div class="reveal">
+                <h2>Why Choose SmartX?</h2>
+                <p>We believe technology should work for you, not the other way around. SmartX is built to be invisible
+                    yet indispensable.</p>
+                <div class="benefit-list">
+                    <div class="benefit-item">
+                        <i data-lucide="check-circle-2"></i>
+                        <div>
+                            <h4>Seamless Integration</h4>
+                            <p>Connects with 5000+ devices out of the box with zero setup frustration.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <i data-lucide="check-circle-2"></i>
+                        <div>
+                            <h4>Real-time Insights</h4>
+                            <p>Get detailed analytics on your air quality, energy, and usage habits.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <i data-lucide="check-circle-2"></i>
+                        <div>
+                            <h4>Privacy First</h4>
+                            <p>Your data stays on-device. We don't sell your habits to advertisers.</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary" style="margin-top: 2rem;">Get Started Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Demo Section -->
+    <section class="section demo-section" id="demo">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>See it in Action</h2>
+                <p>Take a peek into the interface that's changing the way people interact with their spaces.</p>
+            </div>
+            <div class="demo-card glass reveal">
+                <div class="demo-preview">
+                    <!-- Placeholder using the app preview image -->
+                    <img src="assets/images/app-preview.png" alt="SmartX Interface">
+                </div>
+                <div class="demo-btns">
+                    <button class="btn btn-primary btn-glow">Try Demo</button>
+                    <button class="btn btn-outline"><i data-lucide="play-circle"
+                            style="vertical-align: middle; margin-right: 5px;"></i> Watch Video</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>What Our Users Say</h2>
+                <p>Join thousands of happy homeowners who have upgraded their living experience with SmartX.</p>
+            </div>
+            <div class="slider-container reveal">
+                <div class="testimonial-track" id="testimonial-track">
+                    <div class="testimonial-card glass">
+                        <div class="stars">
+                            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+                                data-lucide="star"></i><i data-lucide="star"></i>
+                        </div>
+                        <p class="testimonial-text">"SmartX has completely changed how I manage my utilities. My energy
+                            bill dropped significantly in just the first month!"</p>
+                        <div class="user-info">
+                            <img src="https://i.pravatar.cc/100?u=1" alt="User 1">
+                            <div>
+                                <h4>Alex Rivera</h4>
+                                <small>Homeowner & Tech Enthusiast</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card glass">
+                        <div class="stars">
+                            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+                                data-lucide="star"></i><i data-lucide="star"></i>
+                        </div>
+                        <p class="testimonial-text">"The AI automation is scary good. It knows exactly when I'm home and
+                            sets the perfect mood every single time."</p>
+                        <div class="user-info">
+                            <img src="https://i.pravatar.cc/100?u=2" alt="User 2">
+                            <div>
+                                <h4>Sarah Chen</h4>
+                                <small>Interior Designer</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card glass">
+                        <div class="stars">
+                            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+                                data-lucide="star"></i><i data-lucide="star-half"></i>
+                        </div>
+                        <p class="testimonial-text">"Setup was a breeze. I had all my lights and thermostats connected
+                            in under 10 minutes. Highly recommended!"</p>
+                        <div class="user-info">
+                            <img src="https://i.pravatar.cc/100?u=3" alt="User 3">
+                            <div>
+                                <h4>Marcus Thorne</h4>
+                                <small>Software Engineer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-dots" id="slider-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="section cta-banner">
+        <div class="container reveal">
+            <div class="cta-content">
+                <h2>Start using SmartX today</h2>
+                <p>Join over 50,000 households globally and step into the future of smart living.</p>
+                <a href="#" class="btn btn-outline" style="border-color: white; color: white;">Sign Up Free</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <a href="#" class="logo footer-logo">
+                    <i data-lucide="zap"></i>
+                    SmartX
+                </a>
+                <p>Designing the future of human-environment interaction with intelligent, adaptive solutions.</p>
+                <div class="social-links">
+                    <a href="#"><i data-lucide="twitter"></i></a>
+                    <a href="#"><i data-lucide="instagram"></i></a>
+                    <a href="#"><i data-lucide="github"></i></a>
+                    <a href="#"><i data-lucide="linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4 class="footer-title">Product</h4>
+                <ul>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Roadmap</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Download</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4 class="footer-title">Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press Kit</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4 class="footer-title">Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">API Docs</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">System Status</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 SmartX Tech. All rights reserved.</p>
+            <p>Designed for the future.</p>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <div id="backToTop">
+        <i data-lucide="arrow-up"></i>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal-overlay">
+        <div class="modal-content glass">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h3>Login to SmartX</h3>
+            </div>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                <p class="form-footer">Don't have an account? <a href="#" id="to-register">Register here</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="register-modal" class="modal-overlay">
+        <div class="modal-content glass">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h3>Create Account</h3>
+            </div>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="reg-name">Full Name</label>
+                    <input type="text" id="reg-name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Email Address</label>
+                    <input type="email" id="reg-email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password">Password</label>
+                    <input type="password" id="reg-password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                <p class="form-footer">Already have an account? <a href="#" id="to-login">Login here</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
